@@ -10,8 +10,10 @@ function App() {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="transactions/add" element={<AddTransactions />} />
+          <Route path="transactions">
+            <Route index element={<Transactions />} />
+            <Route path="add" element={<AddTransactions />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
