@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import RootLayout from "./Layouts/RootLayout"
 import Dashboard from "./pages/Dashboard"
 import Transactions from "./pages/Transactions"
+import AddTransactions from "./pages/AddTransaction"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="transactions" element={<Transactions />} />
+          <Route path="transactions/add" element={<AddTransactions />} />
         </Route>
       </Routes>
     </BrowserRouter>

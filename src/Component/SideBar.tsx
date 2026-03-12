@@ -1,25 +1,30 @@
 import { NavLink } from "react-router-dom";
-
 const Sidebar = () => {
   return (
-    <nav style={{ width: "200px", padding: "20px", borderRight: "1px solid #ccc" }}>
-      <h3>SwiftCash</h3>
+    <nav className="sidebar">
+      <h3 className="sidebar__brand">SwiftCash</h3>
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        <li>
-          <NavLink to="/" end>
+      <ul className="sidebar__nav">
+        <li className="sidebar__item">
+          <NavLink to="/" end className={({ isActive }) =>
+            `sidebar__link${isActive ? " active" : ""}`
+          }>
             Dashboard
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/transactions">
+        <li className="sidebar__item">
+          <NavLink to="/transactions" className={({ isActive }) =>
+            `sidebar__link${isActive ? " active" : ""}`
+          }>
             Transactions
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/transactions/add">
+        <li className="sidebar__item">
+          <NavLink to="/transactions/add" className={({ isActive }) =>
+            `sidebar__link${isActive ? " active" : ""}`
+          }>
             Add Transaction
           </NavLink>
         </li>
